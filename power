@@ -1,0 +1,28 @@
+// 제곱수 구하기
+
+#include <stdio.h>
+#define MAX 101
+int t[MAX];
+
+int power(int i, int n);
+
+int main()
+{
+    int i, n;
+    scanf("%d %d", &i, &n);
+    
+    printf("%d", power(i, n));
+}
+
+int power(int i, int n)
+{
+    if(t[n] > 1) 
+        return t[n];
+    
+    if(n == 1)
+        t[n] = i;
+    else
+        t[n] = power(i, n-1) * i;
+    
+    return t[n];
+}
